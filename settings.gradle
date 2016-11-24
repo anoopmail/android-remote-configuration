@@ -1,1 +1,1 @@
-include ':remoteconfiguration2'
+include ':remoteconfiguration2', ':myapplication'
