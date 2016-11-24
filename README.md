@@ -6,15 +6,22 @@ A library to keep your configuration on a remote server and let the android appl
 In you activity
 ```java
 RemoteConfiguration remoteConfiguration = RemoteConfiguration.getInstance();
-remoteConfiguration.fetch("https://api.myjson.com/bins/3dm8c", context); // Initiate a network read, run asynchronously
+remoteConfiguration.fetch("https://api.myjson.com/bins/1sirp", context); // Initiate a network read, run asynchronously
 Person r = (Person) remoteConfiguration.get(Person.class, context);
 Log.d("Person.name = ", r.name);
 ```
+the configuration file hosted should be in JSON format. sample [here](https://api.myjson.com/bins/1sirp)
+
+```{
+   "welcomeText": "Hi user",
+   "isLoginAllowed": true
+   }
+
 and the person class with default values
 ```java
-public class Person {
-        String name = "John";
-        int age = 21;
+public class Configuration {
+        String welcomeText = "Hi user";
+        boolean isLoginAllowed = true;
 }
 ```
 You application requires network permission as below in the mansifest file.

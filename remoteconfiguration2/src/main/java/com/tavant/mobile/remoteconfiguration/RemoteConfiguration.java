@@ -9,6 +9,9 @@ import com.anoopnair.httpzoid.HttpResponse;
 import com.anoopnair.httpzoid.ResponseHandler;
 import com.google.gson.Gson;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * Created by anoop.m on 11/8/2016.
  */
@@ -42,20 +45,17 @@ public class RemoteConfiguration {
         ).send();
 
     }
-
-    public Object get(Context context, Class clazz, Object defaultObject){
-        return read(context, clazz, defaultObject);
-    }
-    public Object get(Context context, Class clazz){
-        return read(context, clazz, null);
+    public Object get(Class clazz, Context context){
+        return read(clazz, context);
     }
 
-    private Object read(Context context, Class clazz, Object defaultObject) {
+
+    private Object read( Class clazz, Context context) {
 
         SharedPreferences remote_configuration_preferences = context.getSharedPreferences("remote_configuration", Context.MODE_PRIVATE);
-        if (remote_configuration_preferences == null)   return defaultObject ;
+        if (remote_configuration_preferences == null)   return createInstanceOf(clazz) ;
         String remote_configuration = remote_configuration_preferences.getString("remote_configuration", null);
-        if (remote_configuration == null)   return defaultObject ;
+        if (remote_configuration == null)   return createInstanceOf(clazz) ;
         //    Type type = new TypeToken<T>(){}.getType();
         Object jsonObject = new Gson().fromJson(remote_configuration, clazz);
         return jsonObject;
@@ -64,5 +64,25 @@ public class RemoteConfiguration {
     private void write(String jsonString, Context context) {
         SharedPreferences remote_configuration = context.getSharedPreferences("remote_configuration", Context.MODE_PRIVATE);
         remote_configuration.edit().putString("remote_configuration", jsonString).commit();
+    }
+
+    private Object createInstanceOf(Class clazz){
+        Constructor<?> cons = null;
+        Object object = null ;
+        try {
+            cons = clazz.getConstructor();
+        } catch (NoSuchMethodException e) {
+            return null ;
+        }
+        try {
+            object = cons.newInstance();
+        } catch (InstantiationException e) {
+            return null ;
+        } catch (IllegalAccessException e) {
+            return null ;
+        } catch (InvocationTargetException e) {
+            return null ;
+        }
+        return object ;
     }
 }
