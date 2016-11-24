@@ -3,7 +3,6 @@ A library to keep your configuration on a remote server and let the android appl
 
 [![Release](https://img.shields.io/github/release/anoopmail/android-remote-configuration.svg?label=Remote Configuration)](https://jitpack.io/#anoopmail/android-remote-configuration)
 
-
 In you activity
 ```java
 RemoteConfiguration remoteConfiguration = RemoteConfiguration.getInstance();
@@ -14,7 +13,7 @@ Log.d("Person.name = ", r.name);
 and the person class with default values
 ```java
 public class Person {
-String name = "John";
-int age = 21;
+        String name = "John";
+        int age = 21;
 }
 ```
