@@ -3,11 +3,11 @@ A library to keep your configuration on a remote server and let the android appl
 
 [![Release](https://img.shields.io/github/release/anoopmail/android-remote-configuration.svg?label=Remote Configuration)](https://jitpack.io/#anoopmail/android-remote-configuration)
         In you activity
-       ```java
-        RemoteConfiguration remoteConfiguration = RemoteConfiguration.getInstance();
-        remoteConfiguration.fetch("https://api.myjson.com/bins/3dm8c", context); // Initiate a network read, run asynchronously
-        Person r = (Person) remoteConfiguration.get(Person.class, context);
-        Log.d("Person.name = ", r.name);
+```java
+RemoteConfiguration remoteConfiguration = RemoteConfiguration.getInstance();
+remoteConfiguration.fetch("https://api.myjson.com/bins/3dm8c", context); // Initiate a network read, run asynchronously
+Person r = (Person) remoteConfiguration.get(Person.class, context);
+Log.d("Person.name = ", r.name);
 ```
 and the person class with default values
 ```java
