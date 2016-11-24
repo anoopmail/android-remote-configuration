@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupRemoteConfig() {
         RemoteConfiguration remoteConfiguration = RemoteConfiguration.getInstance();
 //        remoteConfiguration.fetch("https://api.myjson.com/bins/3dm8c", this);
-        Configuration r = (Configuration) remoteConfiguration.get(Configuration.class, this);
+        Config r = (Config) remoteConfiguration.get(Config.class, this);
         Log.e("value", r.welcomeText);
     }
 }
