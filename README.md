@@ -2,7 +2,9 @@
 A library to keep your configuration on a remote server and let the android application pull from there. Uses Shared Preferences for storage. Features fallback/default object support.
 
 [![Release](https://img.shields.io/github/release/anoopmail/android-remote-configuration.svg?label=Remote Configuration)](https://jitpack.io/#anoopmail/android-remote-configuration)
-        In you activity
+
+
+In you activity
 ```java
 RemoteConfiguration remoteConfiguration = RemoteConfiguration.getInstance();
 remoteConfiguration.fetch("https://api.myjson.com/bins/3dm8c", context); // Initiate a network read, run asynchronously
