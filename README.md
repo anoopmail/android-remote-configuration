@@ -1,5 +1,5 @@
 # android-remote-configuration
-A library to keep your configuration on a remote server and let the android application pull from there. Uses Shared Preferences for storage. Features fallback/default object support.
+A library to keep your configuration on a remote server and let the android application pull from there. Uses Shared Preferences for storage. Features fallback/default configuration support.
 
 [![Release](https://img.shields.io/github/release/anoopmail/android-remote-configuration.svg?label=Remote Configuration)](https://jitpack.io/#anoopmail/android-remote-configuration)
 
