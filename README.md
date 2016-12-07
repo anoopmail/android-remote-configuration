@@ -42,7 +42,7 @@ public class Configuration {
         boolean isLoginAllowed = true;
 }
 ```
-You application requires network permission as below in the mansifest file.
+Add network permissions to the mansifest file.
 ```xml
 <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
