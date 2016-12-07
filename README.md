@@ -12,7 +12,8 @@ Log.d("Person.name = ", r.name);
 ```
 the configuration file hosted should be in JSON format. sample [here](https://api.myjson.com/bins/1sirp)
 
-```java{
+```java
+{
    "welcomeText": "Hi user",
    "isLoginAllowed": true
    }
