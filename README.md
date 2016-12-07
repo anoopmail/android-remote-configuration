@@ -16,6 +16,7 @@ the configuration file hosted should be in JSON format. sample [here](https://ap
    "welcomeText": "Hi user",
    "isLoginAllowed": true
    }
+```   
 
 and the person class with default values
 ```java
