@@ -26,7 +26,7 @@ remoteConfiguration.fetch("https://api.myjson.com/bins/1sirp", context); // Init
 Config r = (Config) remoteConfiguration.get(this, Config.class);
 Log.d("Welcome text: ", r.welcomeText);
 ```
-the configuration file hosted should be in JSON format. sample [here](https://api.myjson.com/bins/1sirp)
+Host the configuration file in JSON format. sample [here](https://api.myjson.com/bins/1sirp)
 
 ```java
 {
