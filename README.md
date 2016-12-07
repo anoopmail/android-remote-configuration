@@ -23,8 +23,8 @@ In you activity
 ```java
 RemoteConfiguration remoteConfiguration = RemoteConfiguration.getInstance();
 remoteConfiguration.fetch("https://api.myjson.com/bins/1sirp", context); // Initiate a network read, run asynchronously
-Person r = (Person) remoteConfiguration.get(Person.class, context);
-Log.d("Person.name = ", r.name);
+Config r = (Config) remoteConfiguration.get(this, Config.class);
+Log.d("Welcome text: ", r.welcomeText);
 ```
 the configuration file hosted should be in JSON format. sample [here](https://api.myjson.com/bins/1sirp)
 
