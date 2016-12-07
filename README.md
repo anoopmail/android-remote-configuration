@@ -3,6 +3,22 @@ A library to keep your configuration on a remote server and let the android appl
 
 [![Release](https://img.shields.io/github/release/anoopmail/android-remote-configuration.svg?label=Remote Configuration)](https://jitpack.io/#anoopmail/android-remote-configuration)
 
+## Usage
+
+### Gradle dependency
+
+```groovy
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.github.anoopmail:android-remote-configuration:v1.1'
+}
+```
+
+### Sample Code
+
 In you activity
 ```java
 RemoteConfiguration remoteConfiguration = RemoteConfiguration.getInstance();
