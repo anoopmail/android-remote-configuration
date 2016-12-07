@@ -27,7 +27,7 @@ Config r = (Config) remoteConfiguration.get(this, Config.class);
 Log.d("Welcome text: ", r.welcomeText);
 ```
 Host the configuration file in JSON format. sample [here](https://api.myjson.com/bins/1sirp)
-
+Change this and the new values will reflect in the application when the app restarts. 
 ```java
 {
    "welcomeText": "Hi user",
@@ -35,7 +35,7 @@ Host the configuration file in JSON format. sample [here](https://api.myjson.com
    }
 ```
 
-and the person class with default values
+Default configuration in Android code.
 ```java
 public class Configuration {
         String welcomeText = "Hi user";
